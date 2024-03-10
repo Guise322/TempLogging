@@ -24,7 +24,7 @@ func main() {
 	tempDataGetter := temp.TemperatureDataGetter{}
 	tempDataSetter := metrics.NewGaugeDataWriter(tempGauge)
 	tempDataService := service.NewTempDataService()
-	dataWritingPeriod := 5 * time.Second
+	dataWritingPeriod := 10 * time.Second
 
 	go func() {
 		err := tempDataService.ServeTempData(tempDataGetter, tempDataSetter, dataWritingPeriod)
