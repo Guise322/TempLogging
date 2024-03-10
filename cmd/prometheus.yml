@@ -1,0 +1,6 @@
+scrape_configs:
+scrape_interval: 10s
+  evaluation_interval: 15s
+  - job_name: "CPU_temp"
+    static_configs:
+      - targets: ["192.168.0.105:8080"]
