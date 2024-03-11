@@ -17,8 +17,9 @@ func main() {
 	slog.Info("Start gathering the CPU temperature data")
 
 	tempGauge := prometheus.NewGauge(prometheus.GaugeOpts{
-		Name: "CPU_temperature",
-		Help: "The value of the current CPU temperature.",
+		Namespace: "raspi",
+		Name:      "cpu_temperature_celcius",
+		Help:      "The value of the current CPU temperature.",
 	})
 
 	tempDataGetter := temp.TemperatureDataGetter{}
